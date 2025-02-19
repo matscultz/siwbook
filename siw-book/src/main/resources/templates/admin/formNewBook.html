@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		New Book
+	</title>
+	<link rel="stylesheet" href="/css/stile3.css" />
+</head>
+
+<body class="body1">
+	<header>
+		<!-- <div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div> -->
+		<nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="#">
+						<img src="/images/logo1.png" alt="logo" />
+					</a>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav_links">
+				<div class="nav__links2"></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="/book">Books</a></li>
+				<li><a href="/author">Authors</a></li>
+				</div>
+				<ul>
+				<li>
+           			 <!-- <button class="btn">
+							
+             		 <span><i class="ri-login-box-line"></i></span>
+             		<a href="/login" class="log">Login</a>
+            		</button> -->
+				<div th:if="${userDetails}">
+                <b th:text="${userDetails.username}" class="username"></b>
+                <button class="btn" type="button"><a href="/logout" class="log">Logout</a></button>
+            </div>
+            <div th:unless="${userDetails}">
+                <button class="btn" type="button">
+                <a href="/login" class="log"><span><i class="ri-login-box-line"></i></span>Login</a>
+                </button>
+            </div>
+          		</li>
+          		
+			</ul>
+		</nav>
+	</header>
+	
+	<!-- <div class="container__right">	
+		<div class="content">
+			<p class="header__login">Aggiungi un libro</p>
+			<form th:action="@{/admin/book}" method="POST" th:object="${book}">
+		  		<div th:if="${#fields.hasGlobalErrors()}">
+		  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+		  		</div>
+				
+				<div class="input__group">
+					
+					<input type="text" th:field="${book.title}" placeholder=""/>
+				    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+				    </span>
+				    <label>Titolo:</label> 
+				</div>
+		
+				<div>
+					<label>Data di rilascio:</label> <span><input type="number" min="1700" max="2025" th:field="${book.year}" /></span>
+				    <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">
+				    </span>
+				</div>
+		
+				<div>
+		            <label for="genre">Genre:</label>
+		            <select id="genre" name="genre" required>
+		                <option value="" disabled selected>Select a genre:</option>
+		                <option th:each="genre : ${genres}" th:value="${genre}" th:text="${genre}"></option>
+		            </select>
+		        </div>
+				<div>
+					<label>Trama:</label> 
+					<span><input type="text" th:field="${book.plot}" /></span>
+				    <span th:if="${#fields.hasErrors('plot')}" th:errors="*{plot}">
+				    </span>
+				</div>
+				
+				<div>
+		            <label for="author">Author:</label>
+		            <select id="author" name="authorId" required>
+		                <option value="" disabled selected>Select an author:</option>
+		                <option th:each="author : ${authors}" th:value="${author.id}" th:text="${author.surname + ' ' + author.name}"></option>
+		            </select>
+		        </div>
+		        
+				<div>
+					<label>URL immagine:</label> <span><input type="text" th:field="${book.urlOfPicture}" /></span>
+				</div>
+				
+				<div>
+					<span><button type="submit">Conferma</button></span>
+				</div>
+			</form>
+		</div>
+	</div>  -->
+	
+	<div class="container2">	
+		<div class="myform">
+			<div class="inserisci-text">
+				<p class="t1">Add a new book</p>
+			</div>
+			<form class="formform" th:action="@{/admin/book}" method="POST" th:object="${book}" enctype="multipart/form-data">
+		  		<div th:if="${#fields.hasGlobalErrors()}">
+		  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+		  		</div>
+				
+				<div>
+					<span>Title:</span> 
+					<span><input class="inputform" type="text" th:field="${book.title}" placeholder=""/></span>
+				    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+				    </span>
+				    
+				</div>
+		
+				<div>
+					<span>Release year:</span> 
+					<span><input class="inputform" type="number" min="1700" max="2025" th:field="${book.year}" /></span>
+				    <span th:if="${#fields.hasErrors('year')}" th:errors="*{year}">
+				    </span>
+				</div>
+		
+				<div>
+		            <span for="genre">Genre:</span>
+		            <select class="select-form" id="genre" name="genre" required>
+		                <option value="" disabled selected>Select a genre:</option>
+		                <option th:each="genre : ${genres}" th:value="${genre}" th:text="${genre}"></option>
+		            </select>
+		        </div>
+				<div>
+					<span>Plot:</span> 
+					<span><textarea class="inputform" type="text" th:field="${book.plot}" /></span>
+				    <span th:if="${#fields.hasErrors('plot')}" th:errors="*{plot}">
+				    </span>
+				</div>
+				
+				<div>
+		            <span for="author">Author:</span>
+		            <select class="select-form" id="author" name="authorId" required>
+		                <option value="" disabled selected>Select an author:</option>
+		                <option th:each="author : ${authors}" th:value="${author.id}" th:text="${author.surname + ' ' + author.name}"></option>
+		            </select>
+		        </div>
+			<!-- <div>
+					<span>Book Cover:</span> 
+					<span><input type="file" name="image" accept="image/png, image/jpeg" required/>
+					</span>
+				</div> -->
+				<div>
+					<span>Photo:</span> 
+					<input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required/></div>
+				<div>
+				
+				<div>
+					<span><button type="submit">Submit</button></span>
+				</div>
+			</form>
+		</div>
+	</div>
+	</body>
+
+</html>

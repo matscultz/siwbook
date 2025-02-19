@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BookFair - Successful sign up!</title>
+	<!-- Links -->
+	<link rel="stylesheet" href="/css/stile4.css" /> 
+	<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="icon" src="/static/favicon.png">
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="#">
+						<img src="/images/logo1.png" alt="logo" />
+					</a>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav_links">
+				<div class="nav__links2"></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="/book">Books</a></li>
+				<li><a href="/author">Authors</a></li>
+				</div>
+				<ul>
+				<li>
+           			 <!-- <button class="btn">
+							
+             		 <span><i class="ri-login-box-line"></i></span>
+             		<a href="/login" class="log">Login</a>
+            		</button> -->
+				<div th:if="${userDetails}">
+                <b th:text="${userDetails.username}" class="username"></b>
+                <button class="btn" type="button"><a href="/logout" class="log">Logout</a></button>
+            </div>
+            <div th:unless="${userDetails}">
+                <button class="btn" type="button">
+                <a href="/login" class="log"><span><i class="ri-login-box-line"></i></span>Login</a>
+                </button>
+            </div>
+          		</li>
+          		
+			</ul>
+		</nav>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<div class="section__container header__container" id="home">
+		<h1>The registration was successful!</h1>
+			<div>
+				<span class="user-info">Name: </span>
+				<span th:text="${user.name}"></span>
+			</div>
+			<div>
+				<span class="user-info">Surname: </span>
+				<span th:text="${user.surname}"></span>
+			</div>
+			<div>
+				<span class="user-info">Email: </span>
+				<span th:text="${user.email}"></span>
+			</div>
+	</div>
+	
+	<footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <a href="#home">BookFair</a>
+          </div>
+          <p>
+            Discover new books and discuss them with our community!
+          </p>
+          <div class="footer__socials">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-pinterest-fill"></i></a>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="#">Explore Books</a></li>
+            <li><a href="#">Discover New Authors</a></li>
+            <li><a href="#">Join our Community</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul class="footer__links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <ul class="footer__links">
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Business Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright 2025 All rights reserved.
+      </div>
+    </footer>
+</body>
+</html>

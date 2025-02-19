@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		BookFair - Login
+	</title>
+	<link rel="stylesheet" href="/css/stile4.css" />
+</head>
+
+<body>
+	<!-- <header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header> -->
+
+	<div class="container">
+		<div class="container__left">
+			<img src="/images/books2.png" alt="books">
+			<h2> ...</h2>	
+			<p>
+				"A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors"
+			</p>
+			<p>
+				 (Charles Baudelaire)
+			</p>
+		</div>
+		<div class="container__right">
+			<div class="content">
+				
+				<img class="logo" src="/images/books.jpg" alt="logo">
+				<p class="header__login">Welcome back!</p>
+				<form th:action="@{/login}" method="POST">
+					<div class="errore__login">
+						<span th:if="${param.error != null}">Wrong username or password!</span>
+					</div>
+					<div class="input__group">
+						<input name="username" type="text" placeholder="" required />
+						<label for="username">Username</label>
+					</div>	
+					<div class="input__group">
+						<input name="password" type="password" placeholder="" required />
+						<label for="password">Password</label>
+					</div>
+					<div>
+					<p><a href="#">Forgot password?</a></p>	
+					<button type="submit">Login</button>		
+				</form>	
+				<div class="divider">
+           			 <span>or</span>
+          		</div>
+				<p class="create__account">
+					Don't have an account? <a th:href="@{/register}">Sign up!</a>
+				</p>
+			</div>	
+		</div>
+	</div>
+	
+	</div>
+	<!-- <h1>Login</h1>
+	<form th:action="@{/login}" method="POST">
+			<div>
+				<span>Username:</span>
+				<span><input name="username" type="text" required /></span>
+			</div>
+			<div>
+				<span>Password:</span>
+				<span><input name="password" type="password" required /></span>
+			</div>
+			<div>
+				<span th:if="${param.error != null}">Username o password errati</span>
+			</div>
+			<div>
+				<span><button type="submit">Login</button></span>
+			</div>
+	</form>
+	<div>
+		<a th:href="@{/register}" th:text="Registrati">Registrati</a>
+	</div> -->
+</body>
+
+</html>

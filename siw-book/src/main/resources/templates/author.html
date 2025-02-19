@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authors</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="#">
+						<img src="/images/logo1.png" alt="logo" />
+					</a>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav_links">
+				<div class="nav__links2"></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="/book">Books</a></li>
+				<li><a href="/author">Authors</a></li>
+				</div>
+				<ul>
+				<li>
+           			 <!-- <button class="btn">
+							
+             		 <span><i class="ri-login-box-line"></i></span>
+             		<a href="/login" class="log">Login</a>
+            		</button> -->
+				<div th:if="${userDetails}">
+                <b th:text="${userDetails.username}" class="username"></b>
+                <button class="btn" type="button"><a href="/logout" class="log">Logout</a></button>
+            </div>
+            <div th:unless="${userDetails}">
+                <button class="btn" type="button">
+                <a href="/login" class="log"><span><i class="ri-login-box-line"></i></span>Login</a>
+                </button>
+            </div>
+          		</li>
+          		
+			</ul>
+		</nav>
+	</header>
+
+	<div class="section__container header__container" id="intro">
+		<div class="intro__image">
+        <img th:src="@{'data:image;base64,' + ${author.photo}}"/>
+      </div>
+      <div class="intro__content">
+        <p class="section__subheader">About the author </p>
+        <h2 class="section__header"><span th:text="${author.name} + ' ' + ${author.surname}">Dino Risi</span></h2>
+        <p class="intro__description">
+          <span th:text="${author.biography}">Biography</span>
+        </p>
+        <div class="intro__grid">
+          <h5>
+            <span><i class="ri-user-line"></i></span> Birth
+          </h5>
+          <span>:</span>
+          <p><span th:text="${author.dateOfBirth}">20/20/2000</span>
+          	<span>in </span>
+	        <span th:text="${author.placeOfBirth}">Roma</span></p>
+	        </div>
+          <div class="intro__grid" th:if="${author.dateOfDeath != null}">
+                <h5><span><i class="ri-user-line"></i></span> Death</h5>
+                <span>:</span>
+                <p><span th:text="${author.dateOfDeath}">Date of Death</span>
+                    <span>in </span>
+                    <span th:text="${author.placeOfDeath}">Place of Death</span></p>
+            </div>
+          
+    
+        
+      </div>
+	</div>
+
+<section class="portfolio" id="portfolio">
+      <div class="section__container portfolio__container">
+        
+        <h2 class="section__header">Books by this author</h2>
+        <div class="portfolio__nav">
+          
+        </div>
+       
+        <div class="portfolio__grid">
+          <div th:each="book : ${author.books}" class="portfolio__card">
+			   <img th:src="@{'data:image;base64,' + ${book.photo}}" alt="Book Cover">
+             <a th:href="@{/book/{id}(id=${book.id})}" class="book-title" th:text="${book.title}"></a>
+          
+				<span th:text="${book.year}">2000></span>
+			
+          </div>
+          
+        </div>
+        
+       
+    </section>
+	  <!--  <h1>Dettagli Autori</h1>
+	    <div th:if="${author}">
+	        <span th:text="${author.name} + ' ' + ${author.surname}">Dino Risi</span>
+	        <span th:text="'(' + ${author.dateOfBirth} + ')'">20/20/2000</span>
+	        <span th:text="'(' + ${author.placeOfBirth} + ')'">Roma</span>
+	        <span th:if="${author.dateOfDeath}">
+	                    <p th:text="${'Death date: ' + author.dateOfDeath}">20/20/1999</p>
+	        </span>
+	        <span th:if="${author.placeOfDeath}">
+	                    <p th:text="${'Morto a: ' + author.placeOfDeath}">Roma</p>
+	        </span>
+	        <span th:text="'(' + ${author.biography} + ')'">Roma</span>
+	        <span><img width="5%" th:src=${author.urlOfPicture} /></span>
+	        <ul>
+			<li th:each="book : ${author.books}">
+				<span th:text="${book.title} + ' (' + ${book.year} + ')'">Up! (2000)></span>
+			</li>
+		</ul>
+	    </div>
+	    <div th:unless="${author}">Non esiste</div>
+	</div> -->
+
+  </body>
+</html>

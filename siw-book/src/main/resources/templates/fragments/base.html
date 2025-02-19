@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/my-style.css}" rel="stylesheet">
+	<!-- <title th:text="${title}"></title> -->
+</head>
+<body>
+	<header th:fragment="intestazione">
+		<navbar>
+			<img class="logo" src="images/logomnc.png">
+			<ul class="lineanavbar">
+				<li><a href="book" th:href="@{/book}">Books</a></li>
+				<li><a href="author" th:href="@{/author}">Authors</a></li>
+				<li><a href="login" th:href="@{/login}">Login</a></li>
+			</ul>
+	</navbar>
+	</header>
+	<div th:fragment="intestazione2">
+		<navbar>
+			<img class="logo" src="images/logomnc.png">
+			<ul class="lineanavbar">
+				<li><a th:href="@{${index}}">Home</a></li>
+				<li><a href="corso" th:href="@{/corso}">Corsi</a></li>
+				<li><a href="insegnante" th:href="@{/insegnante}">Insegnanti</a></li>
+			</ul>
+	</navbar>
+	</div>
+
+	<p>Go to the next page to see fragments in action</p>
+	<aside>
+		<div>This is a sidebar</div>
+	</aside>
+	<div class="another">This is another sidebar</div>
+	
+	<footer th:fragment="fondo(home)">
+			<section id="footer">
+		<div class="container-footer">
+		<div class="footer-left-col">
+			<div class="footer-links">
+				<div class="link-title">
+					<h4>Product</h4>
+					<small>Our Plan</small><br>
+					<small>Our Plan</small>
+				</div>
+				<div class="link-title">
+					<h4>About Us</h4>
+					<small>FAQs</small><br>
+					<small>Our Plan</small>
+				</div>				
+				<div class="link-title">
+					<h4>About Us</h4>
+					<small>FAQs</small><br>
+					<small>Our Plan</small>
+				</div>
+				<div class="link-title">
+					<h4>Explore</h4>
+					<small>FAQs</small><br>
+					<small>Our Plan</small>
+				</div>
+			</div>
+		</div>
+		<div class="footer-right-col">
+			<div class="footer-info">
+				<div class="copyright-text">
+					<small>support@mnc.it</small><br>
+					<small>copyright 2021 MNC</small>
+				</div>
+			</div>	
+		</div>
+		</div>
+	</section>
+	</footer>
+</body>
+</html>

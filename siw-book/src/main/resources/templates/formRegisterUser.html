@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwMovie - Registrazione
+	</title>
+	<link rel="stylesheet" href="/css/stile4.css" />
+	<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+</head>
+
+<body>
+	<!-- <header class="nav_header">
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header> -->
+
+	<!-- <nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="#">
+						<img src="/images/logo1.png" alt="logo" />
+					</a>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav_links">
+				<div class="nav__links2"></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="/book">Books</a></li>
+				<li><a href="#author">Author</a></li>
+				</div>
+				<ul>
+				<li>
+           			 <!-- <button class="btn">
+							
+             		 <span><i class="ri-login-box-line"></i></span>
+             		<a href="/login" class="log">Login</a>
+            		</button> 
+				<div th:if="${userDetails}">
+                <b th:text="${userDetails.username}" class="username"></b>
+                <button type="button"><a href="/logout" class="log">Logout</a></button>
+            </div>
+            <div th:unless="${userDetails}">
+                <button type="button"><a href="/login" class="log">Login</a></button>
+            </div>
+          		</li>
+          		
+			</ul>
+		</nav> -->
+	<!--<div>
+		<a href="/"><img src="/images/logo1.png" width="50%" /></a>
+	</div> -->
+	<div class="container">
+		<div class="container__left">
+			<img src="/images/books2.png" alt="books">
+        	<h2>   ...     </h2>	
+			<p>
+				"A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors"
+			</p>
+			<p>
+				 (Charles Baudelaire)
+			</p>
+		</div>
+		<div class="container__right">
+			<div class="content">
+				<p class="header__login">Join our community!</p>
+				<form th:action="@{/register}" method="POST">
+					<div class="input__group">
+						
+						<input type="text" placeholder="" required th:field="${user.name}" />
+						<span th:if="${#fields.hasErrors('user.name')}" th:errors="${user.name}" th:style="'color:red'">
+						</span>
+						<label>Name</label>
+					</div>
+					<div class="input__group">
+					
+						<input type="text" placeholder="" required th:field="${user.surname}" />
+						<span th:if="${#fields.hasErrors('user.surname')}" th:errors="${user.surname}" th:style="'color:red'">
+						</span>
+						<label>Surname</label>
+					</div>
+					<div class="input__group">
+						
+						<input type="text" placeholder="" required th:field="${user.email}" />
+						<span th:if="${#fields.hasErrors('user.email')}" th:errors="${user.email}" th:style="'color:red'">
+						</span>
+						<label>Email</label>
+					</div>
+					<div class="input__group">
+						
+						<input type="text" placeholder="" required th:field="${credentials.username}" />
+						
+						<span th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}"
+							th:style="'color:red'">
+						</span>
+						<label>Username</label>
+					</div>
+					<div class="input__group">
+						<input type="password" placeholder="" required th:field="${credentials.password}" />
+						<span th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}"
+							th:style="'color:red'">
+						</span>
+						<label>Password</label>
+					</div>
+					<div>
+						<button type="submit">Sign up</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

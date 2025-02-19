@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html use-expressions="true" auto-config="true"
+	xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+	<title>BookFair - Books</title>
+	<link rel="stylesheet" href="/css/stile3.css" />
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="nav__header">
+				<div class="nav__logo">
+					<a href="#">
+						<img src="/images/logo1.png" alt="logo" />
+					</a>
+				</div>
+			</div>
+			<ul class="nav__links" id="nav_links">
+				<div class="nav__links2"></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="/book">Books</a></li>
+				<li><a href="/author">Authors</a></li>
+				</div>
+				<ul>
+				<li>
+           			 <!-- <button class="btn">
+							
+             		 <span><i class="ri-login-box-line"></i></span>
+             		<a href="/login" class="log">Login</a>
+            		</button> -->
+				<div th:if="${userDetails}">
+                <b th:text="${userDetails.username}" class="username"></b>
+                <button class="btn" type="button"><a href="/logout" class="log">Logout</a></button>
+            </div>
+            <div th:unless="${userDetails}">
+                <button class="btn" type="button">
+                <a href="/login" class="log"><span><i class="ri-login-box-line"></i></span>Login</a>
+                </button>
+            </div>
+          		</li>
+          		
+			</ul>
+		</nav>
+		
+		<div class="section__container header__container" id="home">
+			<h1>Let's find your next read!</h1>
+			<div th:if="${ #authorization.expression('isAuthenticated()') and #strings.contains(#authentication.principal.authorities,'ADMIN')}">          
+    			<a th:href="@{/somelink}">ADMIN LINK</a>
+ 			</div>
+ 			<div th:if="${ #authorization.expression('isAuthenticated()') and #strings.contains(#authentication.principal.authorities,'DEFAULT')}">          
+    			<a th:href="@{/somelink}">DEFAULT LINK</a>
+ 			</div>
+		</div>
+	</header>
+
+	<section class="section__container arrival__container" id="catalogue">
+		<h2 class="section__header">Books</h2>
+		<div th:if="${books.isEmpty()}">
+            Non ci sono libri nel sistema
+        </div>
+        <div th:if="${books==null || books.isEmpty()}">Non ci sono libri nel sistema</div>
+		<!--	<ul>
+				<div class="arrival__card">
+					<li th:each="book : ${books}">
+			<a th:href="@{'/book' + '/' + ${book.id}}"
+				th:text="${book.title} + ' (' + ${book.year} + ')'">Up! (2000)</a>
+			<div th:unless="${book.author}">
+			<a th:href="@{'/admin/addAuthor/' + ${book.id}}">Aggiungi autore</a>
+		</div>
+		</li>
+				</div>		
+		</ul> -->
+        <!-- <div th:unless="${books.isEmpty()}">
+			<div th:each="book : ${books}"></div>
+				<div class="arrival__card">
+					<a th:href="@{'/book' + '/' + ${book.id}}">
+						<img th:src=${book.urlOfPicture} />
+						<div class="arrival__content">
+							<a th:href="@{'/book' + '/' + ${book.id}}"
+								th:text="${book.title}">Up! (2000)</a>
+						</div>
+					</a>
+					
+				</div>
+			
+            </div> 
+			
+        </div> -->
+        
+        </section>
+        <div class="container3">
+	    <div class="book-list">
+        <!-- Iterate over the list of books passed from the controller -->
+        <div th:each="book : ${books}" class="book-item">
+            <img  th:src="@{'data:image;base64,' + ${book.photo}}" width="180" height="90" alt="Book Cover">
+            <a th:href="@{/book/{id}(id=${book.id})}" class="book-title" th:text="${book.title}"></a>
+             <p>
+                <a th:href="@{/author/{id}(id=${book.author.id})}" class="book-author" 
+                   th:text="${book.author.surname} + ' ' + ${book.author.name}"></a>
+            </p>
+        </div>
+    </div>
+	</div>
+        
+	<!--	<div class="card">
+			<a th
+				<div class="card__image">
+					<img src="https://m.media-amazon.com/images/I/51V5PZXFdVL._SY445_SX342_.jpg" alt="alternatetext">
+				</div>
+			<div class="arrival__content">
+				<div>
+					<h1>Hoodies</h1>
+					<a href="#">Explore now</a>
+				</div>
+			</div>	
+		</div>
+		<div class="arrival__card">
+			<div class="arrival__image">
+				<img src="https://m.media-amazon.com/images/I/51V5PZXFdVL._SY445_SX342_.jpg" alt="alternatetext">
+			</div>
+			<div class="arrival__content">
+				<div>
+					<h1>Hoodies</h1>
+					<a href="#">Explore now</a>
+				</div>
+			</div>	
+		</div>
+		<div class="arrival__card">
+			<div class="arrival__image">
+				<img src="https://m.media-amazon.com/images/I/51V5PZXFdVL._SY445_SX342_.jpg" alt="alternatetext">
+			</div>
+			<div class="arrival__content">
+				<div>
+					<h1>Hoodies</h1>
+					<a href="#">Explore now</a>
+				</div>
+			</div>	
+		</div>
+		<div class="arrival__card">
+			<div class="arrival__image">
+				<img src="https://m.media-amazon.com/images/I/51V5PZXFdVL._SY445_SX342_.jpg" alt="alternatetext">
+			</div>
+			<div class="arrival__content">
+				<div>
+					<h1>Hoodies</h1>
+					<a href="#">Explore now</a>
+				</div>
+			</div>	
+		</div>
+	</section> -->
+	
+	<!-- <h1>Libri</h1>
+	<div th:if="${books==null || books.isEmpty()}">Non ci sono libri nel sistema</div>
+	<ul>
+		<li th:each="book : ${books}">
+			<a th:href="@{'/book' + '/' + ${book.id}}"
+				th:text="${book.title} + ' (' + ${book.year} + ')'">Up! (2000)</a>
+			<div th:unless="${book.author}">
+			<a th:href="@{'/admin/addAuthor/' + ${book.id}}">Aggiungi autore</a>
+		</div>
+		</li>
+	</ul>
+	<div sec:authorize="isAuthenticated()">
+  This content is only shown to authenticated users. PER TUTTI
+	</div>	
+	 
+	<sec:authorize access="hasRole('ADMIN_ROLE')">
+    <p>Must have ROLE_ADMIN</p>
+    </sec:authorize>
+    
+    <p sec:authorize="hasRole('R')">Hello Admin, you have elevated permissions!</p>
+	<div sec:authorize="hasRole('ADMIN')">
+        <button type="button">Admin Only Button</button>
+    </div> -->
+</body>
+
+</html>

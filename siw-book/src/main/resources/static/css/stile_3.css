@@ -1,0 +1,794 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+#paginaPrincipale{
+	margin-top: 25px;
+	height: 80vh;
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	background-color: aliceblue;
+}
+
+.hero{
+	width: 100%;
+	margin: auto;
+	padding-bottom: 15px;
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+.logo{
+	width: 10%;
+	top: 10px;
+}
+
+.navbar{
+	margin: 30px auto;
+	display: flex;
+	align-items: center;
+}
+
+.nav{
+	margin: 30px auto;
+	display: flex;
+	align-items: center;
+}
+
+.lineanavbar{
+	flex: 1;
+	text-align: right;
+}
+
+ul li{
+	display: inline-block;
+	list-style: none;
+	margin: 0 25px;
+}
+
+ul li a{
+	text-decoration: none;
+	font-weight: 15px;
+	font-size: 17px;
+	letter-spacing: 1px;
+	text-decoration: 2px underline;
+	color: #a5c0e5;
+	padding: 0 10px;
+}
+
+.left{
+	display: flex;
+	float: left;
+	width: 55%;
+
+}
+
+.scritte {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.left h1 {
+	color: #a5c0e5;
+	text-align: center;
+	padding-bottom: 40px;
+	font-size: 50px;
+	letter-spacing: 4px;
+	text-decoration: 2px underline;
+}
+
+.left h2 {
+	color: #a5c0e5;
+	text-align: center;
+	width: 50%;
+}
+
+.left p {
+	color: white;
+	text-align: center;
+}
+
+.bottone-corsi {
+	padding: 15px;
+    background: aliceblue;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 2px solid #a5c0e5;
+    text-align: center
+}
+
+.bottone-corsi a { 
+	color: #a5c0e5;
+	padding: 10px;
+}
+.scritte p { 
+	color: #a5c0e5;
+}
+
+.right{
+	display: flex;
+	float: right;
+	width: 45%;
+	margin: auto;
+}
+
+.imm-centrata {
+	display: flex;
+	margin: auto;
+}
+
+.right p {
+	height: auto;
+	min-height: 100%;
+	line-height: 100%;
+}
+
+.imm-centrata {
+	vertical-align: middle;
+}
+
+.lista-lezioni {
+	display: flex;
+	flex-direction: column;
+}
+
+.riga-lezioni {
+	display: flex;
+	flex-direction: row;
+	margin: 10px;
+}
+
+.riga-lezioni #lezione {
+	color: gray;
+	text-decoration: gray;
+}
+/*---contact---*/
+
+.contatti {
+	display: flex;
+	padding: 50px;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+#contatti {
+	display: flex;
+	padding: 50px;
+	box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.social {
+	float:right;
+	width:50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.social h3{ 
+	color:#a5c0e5;
+	font-style: italic;
+	text-decoration: 2px underline;
+	padding: 10px;
+	text-align: center;
+}
+
+.social p {
+	flex: display;
+	text-align: center;
+	padding:45px 50px;
+}
+
+.social a{
+	padding: 20px;
+	color: gray;
+}
+
+.container-contatti {
+	float: left;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-contatti h3{ 
+	color:#a5c0e5;
+	font-style: italic;
+	text-decoration: 2px underline;
+	padding: 10px;
+	text-align: center;
+}
+.container-contatti-info {
+	display: flex;
+	justify-content: center;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 30px;
+	width: 120px;
+	height: 120px;
+}
+
+.info span {
+	color: #a5c0e5;
+	font-size: 14px;
+	text-decoration: underline;
+	letter-spacing: 2px;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+
+.info a, p {
+	color: gray;
+	margin-top: 10px;
+}
+
+.contact-row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.contact-left-column,.contact-right-column{
+	flex-basis: 50%;
+	
+}
+
+.contact-right-column img{
+	width: 100%;
+}
+
+form{
+	padding: 40px 30px;
+	background: white;
+	display:flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+	max-width: 350px;
+}
+
+/* Login Form */
+
+.bodyLogin {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 50px 0;
+	width: auto;
+	height: auto;
+}
+
+.login {
+	margin: auto;
+}
+
+.login h4 {
+	color: rgb(255, 113, 79); 
+}
+
+.login input {
+	width: 100%;
+	padding: 12px 10px;
+	margin-bottom: 15px;
+	outline: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	border: 2px solid #a5c0e5;
+	border-radius: 5px;
+	letter-spacing: 1px;
+}
+
+.formform {
+	margin:auto;
+	padding: 20px 40px 30px;
+	background-color: rgb(240, 250, 255);
+}
+
+.inputform {
+	margin-top: 4px;
+}
+
+.formform input {
+	width: 100%;
+	padding: 12px 10px;
+	margin-bottom: 15px;
+	outline: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	border: 2px solid #a5c0e5;
+	border-radius: 5px;
+	letter-spacing: 1px;
+}
+
+.login h4 {
+	color: #a5c0e5;
+	letter-spacing: 4px;
+	font-style: italic;
+}
+
+.button-login {
+  font-size: 12px;
+  font-weight: 500;
+  color: #a5c0e5;
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: aliceblue;
+  left: 98px;
+
+}
+
+.button-form {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(132, 154, 189);
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 15px;
+  left: 227px;
+}
+
+.button-form-corso {
+	  font-size: 12px;
+  font-weight: 600;
+  color: rgb(132, 154, 189);
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 15px;
+  left: 288px;
+}
+
+.button-form-insegnante {
+		  font-size: 12px;
+  font-weight: 600;
+  color: rgb(132, 154, 189);
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 15px;
+  left: 289px;
+}
+
+.button-form-utente {
+		  font-size: 12px;
+  font-weight: 600;
+  color: rgb(132, 154, 189);
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: 15px;
+}
+
+.select-form {
+	width: 100%;
+	padding: 12px 10px;
+	margin-top: 4px;
+	margin-bottom: 15px;
+	outline: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	border: 2px solid #a5c0e5;
+	border-radius: 5px;
+	letter-spacing: 1px;
+}
+
+.inserisci-text p {
+	color: #a5c0e5;
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 18px;
+	text-decoration: 2px underline;
+	margin-top: 10px;
+	
+}
+
+.home-text {
+	color: #a5c0e5;
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 18px;
+	text-decoration: 2px underline;
+	margin-top: 10px;
+	font-style: italic;
+	margin-bottom: 20px;
+	
+}
+
+form h4 {
+	padding-bottom: 20px;
+	color: rgb(58, 80, 255);
+}
+
+form input{
+	width: 100%;
+	padding: 12px 10px;
+	margin-bottom: 5px;
+	outline: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	border: 2px solid #fab3c4;
+}
+
+.formLogin {
+	display: flex;
+	flex-direction: row;
+	width:  auto; 
+  height:  auto; 
+  margin:  auto; 
+  background:  #ffffff; 
+  border-radius:  4px; 
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.container {
+		display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 50px 0;
+	width: auto;
+	height: auto;
+}
+
+.container2 {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 50px 50px 0;
+	width: auto;
+	height: auto;
+}
+
+.myform {
+  display: flex;
+  flex-direction: column;
+  width:  auto; 
+  height:  auto; 
+  margin:  auto; 
+  background: rgb(240, 250, 255); 
+  border-radius:  4px; 
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.menu {
+	display: flex;
+	width: auto;
+	height: auto;
+	flex-direction: column;
+	background: aliceblue;	
+	margin: auto;
+	padding: 50px 100px 100px;
+	border-radius: 5px;
+	box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.menu div {
+	padding: 15px;
+	background: white;
+	margin: 10px;
+	border-radius: 3px;
+	border: 2px solid #a5c0e5;
+	color: blue;
+	text-align: center;
+	
+	
+}
+
+.link {
+	color: rgb(115, 115, 115);
+	text-decoration: none;
+	letter-spacing: 2px;
+}
+
+.logout {
+	font-style: italic;
+	font-weight: bold;	
+}
+
+.logout a{
+	color: #a5c0e5;
+	letter-spacing: 1px;
+}
+
+.inserisci-text {
+	margin-top: 10px;
+}
+
+.formLoginLeft{
+	height: auto;
+	min-height: 100%;
+	position: relative;
+	
+}
+
+.paginaRegistrazione {
+	height: 800px;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.paginaRegistrazione h1 {
+	
+}
+
+.tabella-lezioni {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+
+.tabella-prenotazioni {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+
+	
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+b {
+	color: white;
+	font-weight: bold;
+	letter-spacing: 3px;
+}
+
+.table-info {
+	background-color: rgb(181, 211, 252)
+}
+
+tr:nth-child(even) {background-color: aliceblue;}
+/*  ------ */
+
+#footer {
+	padding: 5px 50px 30px;
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+	
+}
+
+.container-footer {
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.footer-left-col {
+	flex-basis: 50%;
+	margin-top: 20px;
+}
+
+.footer-right-col {
+	flex-basis: 35%;
+	margin: 20px 0px 20px 100px;
+}
+
+.footer-links {
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.link-title h4 {
+	color: #a5c0e5;
+	margin-bottom: 15px;
+}
+
+.link-title small {
+	color: gray;
+}
+
+.footer-info {
+	display:flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.copyright-text {
+	color: gray;
+}
+
+.container-oggetti {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.oggetti-oggetto {
+	display: flex;
+	margin: 10px;
+	background-color: aliceblue;
+	height: 225px;
+	border-radius:10px;
+	width: 600px; 
+	margin: 10px;
+}
+
+.oggetto-image {
+	float: left;
+	display: flex;
+	width: 30%;
+	align-items: center;
+}
+
+.oggetto-image img{
+	padding: 30px;
+}
+
+.oggetto-text {
+	float: right;
+	display: flex;
+	width: 70%;
+	align-items: center;
+	flex-direction: column;
+	margin: auto;
+}
+
+.oggetto-text #titolo {
+	color: rgb(130, 164, 194);
+	letter-spacing: 4px;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#titolo-link {
+	color: rgb(130, 164, 194);
+	letter-spacing: 4px;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: 2px underline;
+}
+
+.oggetto-text #informazioni {
+	color: gray;
+}
+
+.container-lezione {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 50px 0;
+	width: auto;
+	height: auto;
+	background-color: aliceblue;
+	border-radius: 10px;
+	padding-top: 30px;
+}
+
+.form-lezione {
+	background-color: aliceblue;
+}
+
+.lezione-oggetto {
+	float: left;
+	display: flex;
+	width: 50%;
+	align-items: center;
+}
+
+.button-prenota {
+  font-size: 12px;
+  font-weight: 500;
+  color: #a5c0e5;
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  cursor: pointer;
+  position: relative;
+  background-color: aliceblue;
+  align-items: center;
+  left: 300px;
+}
+
+.container-elimina {
+	display: flex;
+	height: auto;
+	width: 65%;
+	justify-content: center;
+	align-items: center;
+}
+.button-elimina {
+	display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a5c0e5;
+  letter-spacing: 2px;
+  padding: 10px 10px;
+  outline: 0;
+  border-radius: 5px;
+  border: 2px solid #a5c0e5;
+  background-color: aliceblue;
+}
+#lezione-descrizione {
+	color: black;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+.riga-lezione {
+	display: flex;
+	flex-direction: row;
+}
+.elimina {
+	padding-top: 10px;
+}
+#elimina {
+	color: rgb(130, 164, 194);
+}
+
+.titolo-pagina {
+	color: rgb(251, 174, 88);
+	text-align: center;
+	letter-spacing: 3px;
+	font-size: 28px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.formlezioneprenota {
+	background-color: aliceblue;
+}
+
+.prenotazioni {
+	height: 600px;
+}
+
+.footer-user {
+	margin: 50px;
+}
+
+#lezione-id {
+	color: black;
+	text-decoration: none;
+}
+
+#elimina-prenotazione {
+	color: rgb(165, 193, 234);
+	letter-spacing: 2.5px;
+}

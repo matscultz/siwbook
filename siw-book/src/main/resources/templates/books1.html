@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html use-expressions="true" auto-config="true"
+	xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+	<title>Libro</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	
+	
+	<div><a href="/"><img src="/images/logo-siw.png" width="50%"/></a></div>
+	<h1>Libri</h1>
+	<div th:if="${books==null || books.isEmpty()}">Non ci sono libri nel sistema</div>
+	<ul>
+		<li th:each="book : ${books}">
+			<a th:href="@{'/book' + '/' + ${book.id}}"
+				th:text="${book.title} + ' (' + ${book.year} + ')'">Up! (2000)</a>
+			<div th:unless="${book.author}">
+			<a th:href="@{'/admin/addAuthor/' + ${book.id}}">Aggiungi autore</a>
+		</div>
+		</li>
+	</ul>
+	<div sec:authorize="isAuthenticated()">
+  This content is only shown to authenticated users. PER TUTTI
+	</div>	
+	 
+	<sec:authorize access="hasRole('ADMIN_ROLE')">
+    <p>Must have ROLE_ADMIN</p>
+    </sec:authorize>
+    
+    <p sec:authorize="hasRole('R')">Hello Admin, you have elevated permissions!</p>
+	<div sec:authorize="hasRole('ADMIN')">
+        <button type="button">Admin Only Button</button>
+    </div>
+</body>
+
+</html>
